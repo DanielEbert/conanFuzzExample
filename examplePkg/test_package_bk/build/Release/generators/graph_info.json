@@ -1,0 +1,22 @@
+{
+ "options": [
+  [
+   "examplePkg:fPIC",
+   "True"
+  ],
+  [
+   "examplePkg:fuzzing",
+   "False"
+  ],
+  [
+   "examplePkg:shared",
+   "False"
+  ]
+ ],
+ "root": {
+  "name": null,
+  "version": null,
+  "user": "demo",
+  "channel": "testing"
+ }
+}

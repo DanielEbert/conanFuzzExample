@@ -1,0 +1,18 @@
+{
+ "options": [
+  [
+   "examplePkg:fPIC",
+   "True"
+  ],
+  [
+   "examplePkg:shared",
+   "False"
+  ]
+ ],
+ "root": {
+  "name": null,
+  "version": null,
+  "user": null,
+  "channel": null
+ }
+}

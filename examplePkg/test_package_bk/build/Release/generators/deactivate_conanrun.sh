@@ -1,0 +1,1 @@
+. "/home/user/P/conanFuzzExample/examplePkg/test_package/build/Release/generators/deactivate_conanrunenv-release-x86_64.sh"

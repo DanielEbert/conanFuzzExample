@@ -1,0 +1,22 @@
+{
+ "options": [
+  [
+   "fPIC",
+   "True"
+  ],
+  [
+   "fuzzing",
+   "False"
+  ],
+  [
+   "shared",
+   "False"
+  ]
+ ],
+ "root": {
+  "name": "examplePkg",
+  "version": "1.0",
+  "user": null,
+  "channel": null
+ }
+}

@@ -1,0 +1,5 @@
+[requires]
+examplePkg/1.0@demo/testing
+
+[generators]
+cmake

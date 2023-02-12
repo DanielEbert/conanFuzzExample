@@ -1,0 +1,34 @@
+[settings]
+    arch=x86_64
+    build_type=Release
+    compiler=clang
+    compiler.version=14
+    os=Linux
+
+[requires]
+    examplePkg/1.Y.Z
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    arch_build=x86_64
+    build_type=Release
+    compiler=clang
+    compiler.version=14
+    os=Linux
+    os_build=Linux
+
+[full_requires]
+    examplePkg/1.0@demo/testing:24d596ecc3e7cfef35630620092c5615473ba82a
+
+[full_options]
+    examplePkg:fPIC=True
+    examplePkg:shared=False
+
+[recipe_hash]
+
+
+[env]
+

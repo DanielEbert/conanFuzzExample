@@ -1,0 +1,1 @@
+clang -m64 -O3 -DNDEBUG -m64 -fsanitize=fuzzer,address CMakeFiles/example.dir/src/example.cpp.o -o example  /home/user/.conan/data/examplePkg/1.0/demo/testing/package/24d596ecc3e7cfef35630620092c5615473ba82a/lib/libexamplePkg.a 
