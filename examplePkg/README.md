@@ -1,7 +1,5 @@
 # Build
 
 ~~~
-conan create . demo/testing -pr ../fuzzingProfile -s compiler=clang
+conan create . demo/testing --profile ../fuzzingProfile
 ~~~
-
-TODO: set compiler here and in cmakelists

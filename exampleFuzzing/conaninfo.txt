@@ -1,8 +1,8 @@
 [settings]
     arch=x86_64
     build_type=Release
-    compiler=clang
-    compiler.version=14
+    compiler=hfuzz-g++
+    compiler.version=11
     os=Linux
 
 [requires]
@@ -15,13 +15,13 @@
     arch=x86_64
     arch_build=x86_64
     build_type=Release
-    compiler=clang
-    compiler.version=14
+    compiler=hfuzz-g++
+    compiler.version=11
     os=Linux
     os_build=Linux
 
 [full_requires]
-    examplePkg/1.0@demo/testing:24d596ecc3e7cfef35630620092c5615473ba82a
+    examplePkg/1.0@demo/testing:bd60adfcc711eb9896fc520453b7e3b76fb7d856
 
 [full_options]
     examplePkg:fPIC=True

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/P/conanFuzzExample/exampleFuzzing
+CMAKE_SOURCE_DIR = /home/user/.conan/data/examplePkg/1.0/demo/testing/build/24d596ecc3e7cfef35630620092c5615473ba82a
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/P/conanFuzzExample/exampleFuzzing/build
+CMAKE_BINARY_DIR = /home/user/P/conanFuzzExample/examplePkg
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -85,11 +85,56 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/P/conanFuzzExample/exampleFuzzing/build/CMakeFiles /home/user/P/conanFuzzExample/exampleFuzzing/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/P/conanFuzzExample/examplePkg/CMakeFiles /home/user/P/conanFuzzExample/examplePkg//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/P/conanFuzzExample/exampleFuzzing/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/P/conanFuzzExample/examplePkg/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,32 +162,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named exampleFuzzing
+# Target rules for targets named examplePkg
 
 # Build rule for target.
-exampleFuzzing: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exampleFuzzing
-.PHONY : exampleFuzzing
+examplePkg: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examplePkg
+.PHONY : examplePkg
 
 # fast build rule for target.
-exampleFuzzing/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleFuzzing.dir/build.make CMakeFiles/exampleFuzzing.dir/build
-.PHONY : exampleFuzzing/fast
+examplePkg/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/examplePkg.dir/build.make CMakeFiles/examplePkg.dir/build
+.PHONY : examplePkg/fast
+
+src/examplePkg.o: src/examplePkg.cpp.o
+.PHONY : src/examplePkg.o
 
 # target to build an object file
-src/main.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleFuzzing.dir/build.make CMakeFiles/exampleFuzzing.dir/src/main.o
-.PHONY : src/main.o
+src/examplePkg.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/examplePkg.dir/build.make CMakeFiles/examplePkg.dir/src/examplePkg.cpp.o
+.PHONY : src/examplePkg.cpp.o
+
+src/examplePkg.i: src/examplePkg.cpp.i
+.PHONY : src/examplePkg.i
 
 # target to preprocess a source file
-src/main.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleFuzzing.dir/build.make CMakeFiles/exampleFuzzing.dir/src/main.i
-.PHONY : src/main.i
+src/examplePkg.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/examplePkg.dir/build.make CMakeFiles/examplePkg.dir/src/examplePkg.cpp.i
+.PHONY : src/examplePkg.cpp.i
+
+src/examplePkg.s: src/examplePkg.cpp.s
+.PHONY : src/examplePkg.s
 
 # target to generate assembly for a file
-src/main.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleFuzzing.dir/build.make CMakeFiles/exampleFuzzing.dir/src/main.s
-.PHONY : src/main.s
+src/examplePkg.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/examplePkg.dir/build.make CMakeFiles/examplePkg.dir/src/examplePkg.cpp.s
+.PHONY : src/examplePkg.cpp.s
 
 # Help Target
 help:
@@ -151,11 +205,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... exampleFuzzing"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... examplePkg"
+	@echo "... src/examplePkg.o"
+	@echo "... src/examplePkg.i"
+	@echo "... src/examplePkg.s"
 .PHONY : help
 
 

@@ -33,8 +33,3 @@ class ExamplePkgConan(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = ["examplePkg"]
-        # if self.options.fuzzing:
-        self.cpp_info.cppflags = ['-fsanitize=fuzzer,address']
-        # I'm not sure if we need the following line:
-        self.cpp_info.sharedlinkflags = ['-fsanitize=fuzzer,address']
-        self.cpp_info.exelinkflags = ['-fsanitize=fuzzer,address']
