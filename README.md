@@ -8,3 +8,6 @@
 tools.build:cxxflags=['-fsanitize=address'
 ~~~
 
+### TODO
+
+- I can recompile hfuzz-cc with -fsanitize=address to have it always included. maybe make separate file for that setting.
